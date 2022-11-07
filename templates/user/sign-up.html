@@ -1,0 +1,30 @@
+Sign Up page 
+
+
+<script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script>
+
+
+<form  method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    <label for=""> FUll Name</label>
+    <input type="text" placeholder="Type Full Name" name="full_name">
+    <br>
+    <label for="">Phone Number</label>
+    <input type="number" placeholder="Type Phone Number" name="phone"
+        hx-post="{%url 'check_phone'%}"
+        hx-trigger="keyup delay:2s"
+        hx-target="#phone_error">
+    <p id="phone_error"></p>
+    <input type="password" name="password1" placeholder="Type Password">
+    <input type="password" name="password2" placeholder="Confirm Type Password"
+        hx-post="{% url 'check_password' %}"
+        hx-trigger="keyup delay:2s"
+        hx-target="#password_error">
+    <p id="password_error"></p>
+    <button type="submit">Sign Up</button>
+</form>
+
+<!--<button hx-post="/clicked"
+    hx-trigger="click"
+    hx-target="#parent-div"
+-->
