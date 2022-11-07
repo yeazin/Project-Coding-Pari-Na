@@ -1,1 +1,1 @@
-<h2 align="center">Project Codign Pari Na </h2>
+<h2 align="center">Project Coding Pari Na </h2>
