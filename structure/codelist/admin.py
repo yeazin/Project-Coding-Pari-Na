@@ -1,3 +1,5 @@
 from django.contrib import admin
+from structure.codelist.models import ListInput
 
-# Register your models here.
+
+admin.site.register(ListInput)
