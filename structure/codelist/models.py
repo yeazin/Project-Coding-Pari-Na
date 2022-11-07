@@ -4,7 +4,8 @@ from mainConfig.models.mixin import TimeStampMixin
 
 class ListInput(TimeStampMixin):
     profile = models.ForeignKey(
-        "accounts.Profile",on_delete=models.CASCADE,null=True
+        "accounts.Profile",on_delete=models.CASCADE,null=True,
+        related_name = "profile_input"
     )
     input_values = models.CharField(max_length=200,null=True)
 
