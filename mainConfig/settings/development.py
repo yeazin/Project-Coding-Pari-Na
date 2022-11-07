@@ -16,3 +16,11 @@ DATABASES = {
     }
 }
 
+
+INSTALLED_APPS += [
+    'structure.accounts.apps.AccountsConfig',
+    'structure.codelist.apps.CodelistConfig'
+]
+
+
+AUTH_USER_MODEL = "accounts.User"
