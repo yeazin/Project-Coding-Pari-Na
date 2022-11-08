@@ -99,14 +99,16 @@ class RegisterView(View):
             return redirect('login')
 
 
-
+## Response of Phone number checking using HTMX 
+## when user enter his/her phone number 
+## HTMX will check if the phone number exists or not by this URL end 
 
 class CheckPhoneNumber(View):
     def post(self,request):
         phone_number = request.POST.get('phone')
         
         if Profile.objects.filter(phone=phone_number).exists():
-            return HttpResponse("The Phone Number Already Exists !")
+            return HttpResponse("<div style='color:red; padding:2px;'>The Phone Number is Already Exists !</div>")
         else:
-            return HttpResponse("The Phone Number is Available")
+            return HttpResponse("<div style='color:green; padding:2px;'>The Phone Number is Available</div>")
             
