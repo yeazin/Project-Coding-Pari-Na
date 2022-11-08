@@ -1,7 +1,8 @@
 // this file created for custom js
 
+// alert("helo");
 
-var password = document.getElementById("password1")
+let password = document.getElementById("password1")
   , confirm_password = document.getElementById("password2");
 
 function validatePassword(){
