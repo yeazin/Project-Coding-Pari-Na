@@ -3,8 +3,42 @@
 
 {% block body %}
 
-{% for list in list_input %}
-{{ list }}
-{% endfor %}
+<div class="row g-5">
+    {% if list_input %}
+    {% for list in list_input %}
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <span style="color:rgb(128, 128, 128)">{{ list.created_at|timesince }} ago</span>
+                <h5 style="padding: 5px 5px;">[ {{ list.input_values }} ]</h5>
+                <a href="{% url 'single_list' list.id %}" class="btn btn-primary float-right">Khoj Now</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h2>Sorry no values to KHOJ</h2>
+    {% endif %}
+</div>
+
+
+<input type="text" id="input_value" name="" id="" onblur="checkman()">
+
+<script>
+    function checkman(){
+        let get_value = document.getElementById('input_value').value;
+
+        if (get_value.includes(',') && get_value.includes('[0-9]')){
+            console.log("hi");
+
+        }else{
+            console.log("no")
+        }
+    }
+</script>
+
+
+
+
 
 {% endblock %}

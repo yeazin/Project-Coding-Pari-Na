@@ -10,7 +10,7 @@ from mainConfig.models.mixin import TimeStampMixin
 ## Profile Class 
 
 class Profile(TimeStampMixin):
-    user = models.ForeignKey(
+    user = models.OneToOneField(
         "accounts.User",on_delete= models.CASCADE,null=True,
         related_name='profile'
     )
