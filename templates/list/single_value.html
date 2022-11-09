@@ -2,12 +2,58 @@
 
 {% block body %}
 
-{{ input_value.id }}
-<h4 id="input_value">{{input_value.input_values}}</h4>
-<!-- <input type="text" value="[ {{ input_value.input_values}} ]" name="" id=""> -->
-<input type="number" name="" id="search_value">
-<button type="submit" onclick="searchlist()">Khoj Now</button>
-<p id="result"></p>
+<div class="row" style="margin-top:100px;">
+    <div class="col-3"></div>
+    <div class="col-6" style="text-align:center;">
+        <h3 style="margin-bottom:30px ;">[ <span id="input_value" >{{input_value.input_values}}</span> ]</h3>
+        <!-- <input type="text" value="[ {{ input_value.input_values}} ]" name="" id=""> -->
+        <div class="form-group">
+            <input type="number" class="form-control" name="" id="search_value" placeholder="Please Add a Search Value">
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning btn-block" data-toggle="modal" data-target="#delete">Delete </button>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-secondary btn-block" onclick="reset()">Reset</button>
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary btn-block" onclick="searchlist()">Khoj Now</button>
+            </div>
+        </div>
+        <br>
+        
+        <div id="result_found" hidden class="btn btn-success btn-block"> <h4>True</h4> </div>
+        <div id="result_not_found" hidden class="btn btn-danger btn-block"> <h4>False</h4> </div>
+
+    </div>
+    <div class="col-3"></div>
+</div>
+
+
+<!-- Modal delete  -->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4> Are You Sure,You want to Delete  the List </h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{% url 'delete_list' input_value.id %}" method="POST">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Yes! Delete now</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 {% block js_link %}
 {% load static %}
