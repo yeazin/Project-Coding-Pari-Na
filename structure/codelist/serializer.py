@@ -21,6 +21,7 @@ class ListInputserializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     user_id = serializers.CharField(source='id')
     profile_input = ListInputserializer(many=True)
+    
     class Meta:
         model = Profile
         fields = ['user_id','full_name','profile_input']
