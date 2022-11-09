@@ -3,6 +3,8 @@ from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from rest_framework import generics
+from rest_framework.response import Response
+from rest_framework import status
 from structure.codelist.utils import array_conversation_string
 
 
@@ -63,6 +65,18 @@ class ListInputDeleteView(View):
 
 
 
-class ListInputViewbyProfile(generics.ListAPIView):
-    queryset = Profile.objects.filter(is_active=True, id=1)
+class ListInputViewbyProfile(generics.GenericAPIView):
+    queryset = Profile.objects.filter(is_active=True)
     serializer_class = ProfileSerializer
+
+    def get(self,request):
+
+        list_obj = Profile.objects.filter(
+            is_active=True,
+            user=request.user
+        )
+        serializer = ProfileSerializer(list_obj,many=True)
+        return Response(
+            serializer.data,
+            status=status.HTTP_200_OK
+        )

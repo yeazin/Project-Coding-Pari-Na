@@ -7,9 +7,14 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.generics import GenericAPIView
+from rest_framework import status, serializers
+from rest_framework.response import Response
 
 from structure.accounts.models.base import User
 from structure.accounts.models.profile import Profile
+from structure.accounts.serializer import LoginSerializer
 
 
 ## Login view to our system 
@@ -25,6 +30,7 @@ class LoginView(View):
         password =request.POST.get('password',None)
 
         ## checking if ther user exists 
+        ## user can input username or phone number
         match_user = User.objects.filter(
             Q(username=username) |
             Q(profile__phone=username)
@@ -112,3 +118,40 @@ class CheckPhoneNumber(View):
         else:
             return HttpResponse("<div style='color:green; padding:2px;'>The Phone Number is Available</div>")
             
+
+'''
+Login view for API Authentication 
+'''
+
+class APILoginView(GenericAPIView):
+    permission_classes = ()
+    authentication_classes = ()
+    serializer_class = LoginSerializer
+
+    def post(self,request):
+        serializer = LoginSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        data = serializer.validated_data
+        
+        ## checking if ther user exists 
+        ## user can input username or phone number
+        match_user = User.objects.filter(
+            Q(username=data['username']) |
+            Q(profile__phone=data['username'])
+        )
+        if match_user.exists():
+            user = authenticate(username=match_user.first().username, password=data['password'])
+            if not user:
+                raise serializers.ValidationError({'Error':'Password Mismatch'})
+        else:
+            raise serializers.ValidationError({'Error':'User doesn`t exists'})
+
+        # generate token 
+        refresh = RefreshToken.for_user(user)
+
+        return Response({
+            'access_token':str(refresh.access_token),
+            'refresh_token':str(refresh)
+        },status=status.HTTP_200_OK)
+
+
