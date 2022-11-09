@@ -31,11 +31,15 @@ function add_value_after_post(){
         console.log("found");
         console.log(convert_to_arrays);
         document.getElementById('result').innerHTML = "True"
+
     }else{
         console.log("Not found");
         console.log(convert_to_arrays);
         document.getElementById('result').innerHTML = "False"
+
     }
+
+    localStorage.removeItem('search_value');    
 }
 
 

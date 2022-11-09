@@ -23,3 +23,29 @@ function add_value_to_storage(){
   let search_value = document.getElementById('get_value').value;
   localStorage.setItem('search_value',search_value)
 }
+
+
+
+function list_given_checker(){
+  let check_input = document.getElementById('list_checker').value.replaceAll(' ', '');
+  const list_input_format = /^[0-9 ,]+$/g;
+  const double_comma = /(,{2,})/g;
+
+
+  if (!list_input_format.test(check_input)){
+      document.getElementById('error_show').style.color = "red";
+      document.getElementById('error_show').innerHTML = "Please Type Number only";
+  }else if(double_comma.test(check_input)){
+      document.getElementById('error_show').style.color = "red";
+      document.getElementById('error_show').innerHTML = "Please return a list with single seprated comma.For example ( 23,32,545 )";
+      // alert('please return a list with single seprated comma')
+  }else if (check_input[0] == ',' || check_input.slice(-1) == ','){
+      document.getElementById('error_show').style.color = "red";
+      document.getElementById('error_show').innerHTML = "Please Remove First or Last Comma";
+      
+  }else{
+      document.getElementById('error_show').style.color = "green";
+      document.getElementById('error_show').innerHTML = "Looking Good !!";
+      document.getElementById('list_checker').value = check_input;
+  }
+}

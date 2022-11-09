@@ -18,7 +18,7 @@ class ListInputView(View):
         list_obj = ListInput.objects.filter(
             profile = current_user.id,
             is_active = True
-        ).order_by('-id')
+        ).order_by('-created_at')
         return render(request,'list/list_create.html',{
             'list_input':list_obj
         })
