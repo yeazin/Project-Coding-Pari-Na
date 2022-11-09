@@ -23,7 +23,7 @@ class ListInputView(View):
 
     def get(self,request):
         ## getting the current logged In user 
-        current_user = request.user
+        current_user = request.user.profile
         ## filter the data by user 
         list_obj = ListInput.objects.filter(
             profile = current_user.id,
