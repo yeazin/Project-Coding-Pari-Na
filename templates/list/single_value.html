@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+
+{{ input_value.id }}
+<h4 id="input_value">{{input_value.input_values}}</h4>
+<!-- <input type="text" value="[ {{ input_value.input_values}} ]" name="" id=""> -->
+<input type="number" name="" id="search_value">
+<button type="submit" onclick="searchlist()">Khoj Now</button>
+<p id="result"></p>
+
+
+{% block js_link %}
+{% load static %}
+<script src="{% static 'js/search_value.js' %}"></script>
+<!-- <script src="{% static 'js/custom_js.js' %}"></script> -->
+
+{% endblock %}
+{% endblock %}
