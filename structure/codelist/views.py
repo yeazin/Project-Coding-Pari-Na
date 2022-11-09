@@ -2,10 +2,14 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.views import View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from rest_framework import generics
 from structure.codelist.utils import array_conversation_string
 
 
+
 from structure.codelist.models import ListInput
+from structure.accounts.models.profile import Profile
+from structure.codelist.serializer import ProfileSerializer
 
 
 class ListInputView(View):
@@ -46,3 +50,19 @@ class ListInputSingleView(View):
             'input_value':input_obj
         })
 
+
+class ListInputDeleteView(View):
+    @method_decorator(login_required(login_url='login'))
+    def dispatch(self,request,*args,**kwargs):
+        return super().dispatch(request,*args,**kwargs)
+
+    def post(self,request,valueID):
+        list_obj = get_object_or_404(ListInput,id=valueID)
+        list_obj.delete()
+        return redirect('/')
+
+
+
+class ListInputViewbyProfile(generics.ListAPIView):
+    queryset = Profile.objects.filter(is_active=True, id=1)
+    serializer_class = ProfileSerializer
