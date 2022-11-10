@@ -1,4 +1,5 @@
 <h1 align="center"> Coding Pari Na </h1><br>
+<p align="center"> Technical Documention </p>
 <h6 align="Center">
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
@@ -11,7 +12,9 @@
 <h4 align="center">
 <a href="https://github.com/yeazin/Project-Coding-Pari-Na#-project-installation-"> Project Installation</a> | 
 <a href="https://github.com/yeazin/Project-Coding-Pari-Na#project-flow"> Project Flow </a>
+|<a href="https://github.com/yeazin/Project-Coding-Pari-Na#project-documention"> Project Documention </a>
 </h4>
+</h4> 
 
 <br>
 
@@ -77,6 +80,23 @@ Now we are good to Go . We can check the [127.0.0.1:8000](http://127.0.0.1:8000)
 <h2 align="center">Project Flow</h2>
 <br>
 
+#### Live Project INFO
+
+<br>
+"Project Coding Pari Na" will be found to test in online .
+
+Project URL : https://yeazin.pythonanywhere.com/ <br>
+Project Admin Panel URL : https://yeazin.pythonanywhere.com/admin/
+<br>
+```bash 
+    Admin Login credentials 
+
+    username : sadmin
+    password : 123456
+
+```
+<br>
+
 #### Project Structure 
 <br>
 
@@ -115,7 +135,7 @@ Now we are good to Go . We can check the [127.0.0.1:8000](http://127.0.0.1:8000)
             |-- urls.py # Code list URL file)
             |-- admin.py
 
-    |__ static/ # statict folder (css,js)
+    static/ # statict folder (css,js)
         |__ css/
             |-- bootstrap.css 
         |__ js/
@@ -123,7 +143,7 @@ Now we are good to Go . We can check the [127.0.0.1:8000](http://127.0.0.1:8000)
             |-- custom_js.js
             |-- search_value.js
     
-    |__ templates/
+    templates/ # HTML templates folder
         |__ base/ # base html folder
             |-- base.html
             |-- header.html
@@ -133,7 +153,7 @@ Now we are good to Go . We can check the [127.0.0.1:8000](http://127.0.0.1:8000)
         |__ user/
             |-- login.html
             |-- sign-up.html
-            
+
     |-- manage.py
     |-- .env  
     |-- .gitignore
@@ -143,3 +163,11 @@ Now we are good to Go . We can check the [127.0.0.1:8000](http://127.0.0.1:8000)
 
 ```
 <br>
+
+<h2 align="center"> Project Documention </h2>
+
+#### Thanks for Tagging alone with Technical Documention , Read the [Project Documtion here](https://google) 
+
+Project Documention URL : https://google.com
+
+Thanks ...
