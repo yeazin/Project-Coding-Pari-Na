@@ -2,7 +2,7 @@
 <h6 align="Center">
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
- [![git](https://badgen.net/badge/icon/git?icon=git&label)](https://git-scm.com) [![Visual Studio](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)](https://visualstudio.microsoft.com)
+ [![git](https://badgen.net/badge/icon/git?icon=git&label)](https://git-scm.com) [![Visual Studio](https://badgen.net/badge/icon/visualstudio?icon=visualstudio&label)](https://visualstudio.microsoft.com) [![HTMX - version 1.8.4](https://img.shields.io/badge/HTMX-version_1.8.4-2ea44f)](https://htmx.org/) [![Made with  - JavaScripts](https://img.shields.io/badge/Made_with_-JavaScripts-blueviolet)](https://www.javascript.com/) [![Bootstrap - 4.4.1](https://img.shields.io/badge/Bootstrap-4.4.1-ff69b4)](https://getbootstrap.com/docs/3.4/)
 
 </h6>
 
@@ -72,4 +72,74 @@ python manage.py runserver
 
 ```
 Now we are good to Go . We can check the [127.0.0.1:8000](http://127.0.0.1:8000) <br> for The root API documention.
+<br>
+
+<h2 align="center">Project Flow</h2>
+<br>
+
+#### Project Structure 
+<br>
+
+```bash 
+
+
+    mainConfig/  #Root Config folder
+        |-- __init__.py
+        |__ settings/
+            |-- base.py # base settings
+            |-- development # development settings)
+        |__ models/
+            |-- mixxin.py # Mixxin abstruct models 
+        |-- urls.py (Root URL file)
+        |-- wsgi.py
+        |-- asgi.py
+
+
+    structure   # All the APPs will be under on it
+        |-- __init__.py
+        |__ accounts/ 
+            |-- __init.py
+            |__ models/ # database folder  
+                |-- base.py # Base User config
+                |-- profile.py # profile models 
+            |-- views 
+            |-- serializer.py # API file
+            |-- urls.py # accounts URL file)
+            |-- admin.py
+
+        |__ codelist/
+            |-- __init__.py
+            |-- models.py # Code list database file
+            |-- views 
+            |-- serializer.py # API file
+            |-- urls.py # Code list URL file)
+            |-- admin.py
+
+    |__ static/ # statict folder (css,js)
+        |__ css/
+            |-- bootstrap.css 
+        |__ js/
+            |-- htmx.js
+            |-- custom_js.js
+            |-- search_value.js
+    
+    |__ templates/
+        |__ base/ # base html folder
+            |-- base.html
+            |-- header.html
+        |__ list/
+            |-- list_create.html
+            |-- single_value.html
+        |__ user/
+            |-- login.html
+            |-- sign-up.html
+            
+    |-- manage.py
+    |-- .env  
+    |-- .gitignore
+    |-- db # development database 
+    |-- require.txt # package dependency file
+    
+
+```
 <br>
