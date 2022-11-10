@@ -14,5 +14,41 @@
 </h4> 
 
 <h2 align="center">Authentication</h2>
+
+#### Sign Up
+```bash
+    A user can Sign up to System using : 
+        - Full Name 
+        - Phone Number (Unque)
+        - Password 
+        - Confirm Password
+```
+![original](image/z_sign_up.png)
+```bash 
+    Error Will show if Phone Number is not Unque
+    Otherwise it will show available
+
+    NB : We use HTMX for this functionality 
+```
+![original](image/z_check_success_sign_up.png)
+![original](image/z_check_sign_up.png)
+
+
+```bash 
+    User can login to the system using 
+        - Username or Phone number
+        - Password
+```
+![original](image/z_login.png)
+
+![original](image/z_khoj_the_search_without.png)
+
+![original](image/z_comma_error.png)
+![original](image/z_double_comma.png)
+![original](image/z_true.png)
+![original](image/z_false.png)
+![original](image/z_looking_good.png)
+![original](image/z_str.png)
+
 <h2 align="center">Khoj the Search</h2>
 <h2 align="center">API Endpoint</h2>
