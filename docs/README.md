@@ -7,9 +7,9 @@
 </h6>
 
 <h4 align="center">
-<a href="https://github.com/yeazin/Project-Coding-Pari-Na#-project-installation-"> Authentication</a> | 
-<a href="https://github.com/yeazin/Project-Coding-Pari-Na#project-flow"> Khoj the Search </a>
-|<a href="https://github.com/yeazin/Project-Coding-Pari-Na#-project-documention-"> API Endpoint </a>
+<a href="https://github.com/yeazin/Project-Coding-Pari-Na/tree/main/docs#authentication"> Authentication</a> | 
+<a href="https://github.com/yeazin/Project-Coding-Pari-Na/tree/main/docs#khoj-the-search"> Khoj the Search </a>
+|<a href="https://github.com/yeazin/Project-Coding-Pari-Na/tree/main/docs#api-endpoint"> API Endpoint </a>
 
 </h4> 
 
@@ -44,7 +44,8 @@
 <h2 align="center">Khoj the Search</h2>
 
 ```bash 
-    NB : The followings functionalities are for only authenticated user . If User is not authentiated then the system will redirect user on  the login page 
+    NB : The followings functionalities are for only authenticated user . 
+    If User is not authentiated then the system will redirect user on  the login page 
 ```
 
 #### Dashboard 
@@ -62,6 +63,7 @@ All the input values he/she ever created will appear here.
     Dashboard with List input Data
 ```
 ![original](image/z_dashboard.png)
+<br>
 
 #### Khoj the Search List Input 
 <br>
@@ -110,7 +112,7 @@ If the search value be found in list it will return <strong>True</strong> otherw
 
 ```bash 
     Here we will be demonstrating on how we solve the solution of khoj the search .
-    
+
         - After Pressing the Khoj now button from the pop-up 
           the backend takes input list, current user and created time 
           to store them in database. 
@@ -127,5 +129,41 @@ If the search value be found in list it will return <strong>True</strong> otherw
           on the list in the single page. 
 ```
 
+<br>
+
 
 <h2 align="center">API Endpoint</h2>
+
+There is only one API ENDpoint where the list data will be shown of the <strong>current User.</strong> ever created any list to the system
+This <br> endpoint is accesseble by a <strong>Bearer Token</strong>. WIthout token the data won`t be shown. 
+
+API Endpoint URL : http://127.0.0.1:8000/api/v1/list/ <br>
+Token URL : http://127.0.0.1:8000/api/token/
+
+```bash 
+    The Json Data : 
+
+    [
+        {
+            "user_id": "1",
+            "full_name": "Nazrul Islam Yeasin",
+            "profile_input": [
+                    {
+                        "input_values": "4545,545,454",
+                        "created_at": "2022-11-10T15:02:24.353710Z"
+                    },
+                    {
+                        "input_values": "76,69,9",
+                        "created_at": "2022-11-10T15:02:43.358465Z"
+                    }
+            ]
+        }
+    ]
+```
+
+
+#### Thanks for Viewing the Documention 
+If you have any quiry regarding this project <br>
+Feel free to contact me :
+
+Email : naz.yeasin@gmail.com
