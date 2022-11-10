@@ -48,7 +48,7 @@ env\Scripts\activate.bat
 source env/bin/activate
 
 ```
-#### Install all the project Requirements
+#### Go the project folder and Install all the project Requirements
 
 ```bash
 
