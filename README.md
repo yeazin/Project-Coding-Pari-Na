@@ -12,8 +12,8 @@
 <h4 align="center">
 <a href="https://github.com/yeazin/Project-Coding-Pari-Na#-project-installation-"> Project Installation</a> | 
 <a href="https://github.com/yeazin/Project-Coding-Pari-Na#project-flow"> Project Flow </a>
-|<a href="https://github.com/yeazin/Project-Coding-Pari-Na#project-documention"> Project Documention </a>
-</h4>
+|<a href="https://github.com/yeazin/Project-Coding-Pari-Na#-project-documention-"> Project Documention </a>
+
 </h4> 
 
 <br>
@@ -166,8 +166,8 @@ Project Admin Panel URL : https://yeazin.pythonanywhere.com/admin/
 
 <h2 align="center"> Project Documention </h2>
 
-#### Thanks for Tagging alone with Technical Documention , Read the [Project Documtion here](https://google) 
+#### Thanks for Tagging alone with the Technical Documention , Read the [Project Documtion here](https://google) 
 
 Project Documention URL : https://google.com
 
-Thanks ...
+Wish you a Great Time ...
