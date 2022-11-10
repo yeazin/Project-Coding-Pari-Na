@@ -77,7 +77,9 @@ python manage.py createsuperuser
 python manage.py runserver
 
 ```
-Now we are good to Go . We can check the [127.0.0.1:8000](http://127.0.0.1:8000) <br> for The root API documention.
+Now we are good to Go . We can check the [127.0.0.1:8000](http://127.0.0.1:8000/admin/) <br> for The root API documention.<br>
+[ NB : Create a Profile from the admin panel then we can login in client side with <br> the same credentials  otherwise it will show an
+error "User has no Profile"]
 <br>
 
 <h2 align="center">Project Flow</h2>
