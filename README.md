@@ -94,6 +94,8 @@ Project Admin Panel URL : https://yeazin.pythonanywhere.com/admin/
     username : sadmin
     password : 123456
 
+    NB : You Can also use the Credential to log in client side
+
 ```
 <br>
 
@@ -166,8 +168,8 @@ Project Admin Panel URL : https://yeazin.pythonanywhere.com/admin/
 
 <h2 align="center"> Project Documention </h2>
 
-#### Thanks for Tagging alone with the Technical Documention , Read the [Project Documtion here](https://google) 
+#### Thanks for Tagging alone with the Technical Documention , Read the [Project Documtion here](https://github.com/yeazin/Project-Coding-Pari-Na/tree/main/docs#-coding-pari-na-documention-) 
 
-Project Documention URL : https://google.com
+Project Documention URL :  [https://projectcodingparina.docs](https://github.com/yeazin/Project-Coding-Pari-Na/tree/main/docs#-coding-pari-na-documention-)
 
 Wish you a Great Time ...
